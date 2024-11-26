@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат-бот</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/chat">Чат с ботом</a>
+    </nav>
+</header>
+
+<main>
+    <div class="chatbot-window">
+        <div class="chatbot-header">
+            <span>Чат-бот</span>
+            <button onclick="window.location.href='/'">×</button>
+        </div>
+        <div class="chatbot-content" id="chatbotContent">
+            <!-- Сообщения чат-бота будут отображаться здесь -->
+        </div>
+        <div class="chatbot-footer">
+            <input type="text" id="userMessage" placeholder="Введите сообщение..." />
+            <button onclick="sendMessage()">Отправить</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2023 Суперприложение. Все права защищены.</p>
+</footer>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>
