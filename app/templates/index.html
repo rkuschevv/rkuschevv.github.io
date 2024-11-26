@@ -17,21 +17,21 @@
         <a href="#reviews">Отзывы</a>
         <a href="#future">Планы на будущее</a>
         <a href="#contacts">Контакты</a>
-        <a href="/chat">Чат с ботом</a>
     </nav>
 </header>
 
-    <div class="parallax"></div>
+<div class="parallax"></div>
 
+<main>
     <div id="about" class="section">
         <h2>Что это?</h2>
         <p>Суперприложение — это универсальная платформа, которая объединяет множество услуг и функций в одном месте...</p>
     </div>
 
-    <!-- Секция со слайдером -->
+    <!-- Секция с слайдером -->
     <div class="slider" id="company-slider">
         <div class="slider-container">
-            <img src="https://yastatic.net/s3/home/logos/opengraph-image.png" alt="Company 1">
+            <img src="../images/background.jpeg" alt="Company 1">
             <img src="https://inplace.ru/img/1280x720/company/logos/_200227_keyvisual_for_presentation_fin-01.png" alt="Company 2">
             <img src="https://plusworld.ru/upload/iblock/b03/qaiu5t69t3zcnkx5yccgrk3l91t89jek.jpg" alt="Company 3">
         </div>
@@ -91,11 +91,26 @@
     </div>
 </main>
 
-<footer>
-    <p>&copy; 2024 Суперприложение. Все права защищены.</p>
-</footer>
+<!-- Чат-бот -->
+<div class="chat">
+    <div class="chat-messages">
+        <div class="chat-messages__content" id="messages">
+            чат-бот
+        </div>
+    </div>
+    <div class="chat-input">
+        <form method="post" id="chat-form">
+            <input type="text" id="message-text" class="chat-form__input" placeholder="Введите сообщение">
+            <input type="submit" class="chat-form__submit" value="=>">
+        </form>
+    </div>
+</div>
 
 <script src="/static/js/script.js"></script>
 
+
+<footer>
+    <p>&copy; 2024 Суперприложение. Все права защищены.</p>
+</footer>
 </body>
 </html>

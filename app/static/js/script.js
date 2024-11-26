@@ -1,3 +1,13 @@
+// Открытие и закрытие чата
+document.getElementById("chat-icon").addEventListener("click", function() {
+    document.getElementById("chat").style.display = "flex";
+});
+
+document.getElementById("close-chat").addEventListener("click", function() {
+    document.getElementById("chat").style.display = "none";
+});
+
+// Скрипт для переключения слайдов (не изменяется)
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slider-container img');
 
@@ -15,38 +25,8 @@ function prevSlide() {
     showSlide(currentSlide - 1);
 }
 
-function toggleChat() {
-    const chatbotWindow = document.getElementById('chatbotWindow');
-    const displayStyle = chatbotWindow.style.display;
-    if (displayStyle === 'none' || displayStyle === '') {
-        chatbotWindow.style.display = 'block'; // Показываем окно
-    } else {
-        chatbotWindow.style.display = 'none'; // Скрываем окно
-    }
-}
-
-// Функция отправки сообщения в чат-бота
-function sendMessage() {
-    const userMessage = document.getElementById('userMessage').value;
-    if (userMessage) {
-        // Отправка сообщения на сервер
-        fetch('/chat', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message: userMessage })
-        })
-        .then(response => response.json())
-        .then(data => {
-            const chatbotContent = document.querySelector('.chatbot-content');
-            const botMessage = document.createElement('p');
-            botMessage.textContent = data.response;
-            chatbotContent.appendChild(botMessage);
-
-            // Очистка поля ввода
-            document.getElementById('userMessage').value = '';
-        });
-    }
-}
-
+window.addEventListener('scroll', () => {
+    const parallax = document.querySelector('.parallax');
+    const scrollPosition = window.scrollY;
+    parallax.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+});
