@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-from chatbot import get_bot_response  # Импортируем функцию из chatbot.py
+#from chatbot import get_bot_response  # Импортируем функцию из chatbot.py
 
 app = FastAPI()
 
