@@ -1,5 +1,17 @@
+// Управление открытием/закрытием окна чата
+document.addEventListener('DOMContentLoaded', () => {
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatPopup = document.getElementById('chat-popup');
 
-// Скрипт для переключения слайдов (не изменяется)
+    chatToggle.addEventListener('click', () => {
+        const isOpen = chatPopup.style.display === 'block';
+        chatPopup.style.display = isOpen ? 'none' : 'block';
+        chatToggle.textContent = isOpen ? 'Чат' : 'Закрыть';
+    });
+});
+
+
+// Скрипт для переключения слайдов
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slider-container img');
 
