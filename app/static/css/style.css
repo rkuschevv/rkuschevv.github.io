@@ -59,36 +59,37 @@ main {
 
 /* Слайдер */
 .slider {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 40px;
-    border-radius: 8px;
     position: relative;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.slider img {
-    width: 100%;
-    display: block;
+    width: 100%; /* Ширина слайдера */
+    max-width: 900px; /* Максимальная ширина */
+    height: 400px; /* Высота рамки */
+    margin: 0 auto;
+    overflow: hidden; /* Скрывает выходящие за рамки изображения */
+    background: #000; /* Фон рамки, если изображения не загрузились */
+    margin-bottom: 40px;
 }
 
 .slider-container {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease; /* Анимация при смене слайдов */
+    width: 100%; /* Динамическая ширина для всех слайдов */
+}
+
+.slider-container img {
+    width: 100%; /* Ширина изображения равна ширине контейнера */
+    height: 100%; /* Высота изображения равна высоте контейнера */
+    object-fit: cover; /* Обрезает излишки, сохраняя пропорции */
 }
 
 .slider-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
-    color: #3366ff;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
     cursor: pointer;
-    border-radius: 50%;
+    z-index: 10;
 }
 
 .slider-control.prev {
