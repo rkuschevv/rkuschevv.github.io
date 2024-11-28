@@ -6,7 +6,7 @@ body {
     color: #333333;
     line-height: 1.6;
     scroll-behavior: smooth;
-    display: block; /* Убираем Flexbox для body */
+    display: block;
 }
 
 /* Стили хедера */
