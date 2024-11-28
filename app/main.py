@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
-from chatbot import handle_action
+#from chatbot import handle_action
 
 app = FastAPI()
 
