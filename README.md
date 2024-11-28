@@ -21,19 +21,20 @@
 Чтобы запустить проект локально, выполните следующие шаги:
 
 1. Клонируйте репозиторий:
-   ```bash
-   git clone https://github.com/rkuschevv/superapp_web.git
-   cd superapp_web
+```bash
+git clone https://github.com/rkuschevv/superapp_web.git
+cd superapp_web
+```
 Установите необходимые зависимости:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 Запустите приложение:
 
-   ```bash
-   uvicorn main:app --reload
-   ```
+```bash
+uvicorn main:app --reload
+```
 Откройте http://127.0.0.1:8000 в вашем браузере.
 
 Контакты
