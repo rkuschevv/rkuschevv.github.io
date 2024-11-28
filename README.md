@@ -25,12 +25,12 @@
 git clone https://github.com/rkuschevv/superapp_web.git
 cd superapp_web
 ```
-Установите необходимые зависимости:
+2. Установите необходимые зависимости:
 
 ```bash
 pip install -r requirements.txt
 ```
-Запустите приложение:
+3. Запустите приложение:
 
 ```bash
 uvicorn main:app --reload
