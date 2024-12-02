@@ -35,5 +35,7 @@ jobs:
       run: |
         git checkout -b master
         git clone https://github.com/rkuschevv/superapp_web
+        cd superapp_web
         ls
+        cd app
         uvicorn app.main:app --host 0.0.0.0 --port 8000
