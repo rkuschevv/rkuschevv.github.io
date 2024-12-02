@@ -1,6 +1,6 @@
 name: CI/CD for FastAPI
 
-on:
+on
   push:
     branches:
       - main
