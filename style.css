@@ -1,0 +1,206 @@
+/* Основные стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    display: block;
+}
+
+/* Стили хедера */
+header {
+    background: linear-gradient(135deg, #ffffff, #f0f2f5);
+    padding: 15px 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header nav a {
+    color: #3366ff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Параллакс-эффект */
+.parallax {
+    background-image: url('../../images/background.jpeg'); /* Путь к изображению */
+    min-height: 400px;
+    background-attachment: scroll; /* Эффект параллакса */
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius:10px;
+    margin: 20px;
+}
+
+main {
+    padding: 100px 20px 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: #3366ff;
+    margin-bottom: 20px;
+}
+
+/* Слайдер */
+.slider {
+    position: relative;
+    width: 100%; /* Ширина слайдера */
+    max-width: 900px; /* Максимальная ширина */
+    height: 400px; /* Высота рамки */
+    margin: 0 auto;
+    overflow: hidden; /* Скрывает выходящие за рамки изображения */
+    background: #000; /* Фон рамки, если изображения не загрузились */
+    margin-bottom: 40px;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease; /* Анимация при смене слайдов */
+    width: 100%; /* Динамическая ширина для всех слайдов */
+}
+
+.slider-container img {
+    width: 100%; /* Ширина изображения равна ширине контейнера */
+    height: 100%; /* Высота изображения равна высоте контейнера */
+    object-fit: cover; /* Обрезает излишки, сохраняя пропорции */
+}
+
+.slider-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider-control.prev {
+    left: 10px;
+}
+
+.slider-control.next {
+    right: 10px;
+}
+
+/* Контакты */
+.contacts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    text-align: center;
+    width: 150px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card a {
+    color: #3366ff;
+    text-decoration: none;
+}
+
+footer {
+    background: linear-gradient(135deg, #ffffff, #f0f2f5);
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    color: #666666;
+}
+
+/* Основные стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Меню для чат-бота */
+/* Кнопка чата и всплывающее окно */
+#chat-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    text-align: right;
+}
+
+#chat-toggle {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+#chat-popup iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
+#donate-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.donate-button {
+    display: inline-block;
+    background-color: #4CAF50; /* Зеленый цвет кнопки */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.donate-button:hover {
+    background-color: #45a049; /* Темнее при наведении */
+}
