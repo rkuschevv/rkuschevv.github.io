@@ -30,7 +30,7 @@ header nav a {
 
 /* Параллакс-эффект */
 .parallax {
-    background-image: url('../../images/background.jpeg'); /* Путь к изображению */
+    background-image: url('background.jpeg'); /* Путь к изображению */
     min-height: 400px;
     background-attachment: scroll; /* Эффект параллакса */
     background-position: center top;
