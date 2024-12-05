@@ -181,7 +181,11 @@ body {
     border: none;
 }
 
-
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
 
 #donate-section {
     margin-top: 20px;
