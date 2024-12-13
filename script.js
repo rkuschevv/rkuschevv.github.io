@@ -1,14 +1,33 @@
-// Управление открытием/закрытием окна чата
-document.addEventListener('DOMContentLoaded', () => {
-    const chatToggle = document.getElementById('chat-toggle');
-    const chatPopup = document.getElementById('chat-popup');
+document.addEventListener("DOMContentLoaded", () => {
+    const burgerToggle = document.getElementById("burger-toggle");
+    const sidebar = document.getElementById("sidebar");
 
-    chatToggle.addEventListener('click', () => {
-        const isOpen = chatPopup.style.display === 'block';
-        chatPopup.style.display = isOpen ? 'none' : 'block';
-        chatToggle.textContent = isOpen ? 'Чат' : 'Закрыть';
+    // Переключение состояния бургер-меню
+    burgerToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
     });
+
+    // Логика слайдера
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slider-container img");
+    const totalSlides = slides.length;
+
+    const updateSlidePosition = () => {
+        const sliderContainer = document.querySelector(".slider-container");
+        sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    };
+
+    window.nextSlide = () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlidePosition();
+    };
+
+    window.prevSlide = () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+    };
 });
+
 
 
 // Скрипт для переключения слайдов
