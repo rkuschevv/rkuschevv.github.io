@@ -210,68 +210,50 @@ body {
 }
 
 
-/* Бургер-меню */
+/* Стили для бургер-меню */
 .burger-menu {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
+    position: relative;
 }
 
 #burger-toggle {
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #333;
-}
-
-.burger-menu button {
     background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
-    padding: 10px;
     color: #333;
 }
-
-.burger-menu button:hover {
-    color: #007BFF; /* Цвет при наведении */
-    transform: scale(1.1); /* Увеличение при наведении */
-    transition: all 0.3s ease;
-}
-
 
 #sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    height: 100%;
-    width: 250px;
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    transition: left 0.3s ease;
-    z-index: 999;
+    position: absolute;
+    top: 40px; /* Расположение меню */
+    left: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: none; /* Скрываем меню по умолчанию */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
+/* Показываем меню при наведении */
+.burger-menu:hover #sidebar {
+    display: block;
+}
+
+/* Стили для ссылок внутри меню */
 #sidebar a {
-    color: white;
+    display: block;
+    padding: 8px 16px;
+    color: #333;
     text-decoration: none;
-    margin: 10px 0;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 #sidebar a:hover {
-    text-decoration: underline;
+    background-color: #f0f0f0;
+    color: #007BFF;
 }
 
-/* Состояние меню открыто */
-#sidebar.active {
-    left: 0;
-}
 
 /* Пример стилей для слайдера */
 .slider {
