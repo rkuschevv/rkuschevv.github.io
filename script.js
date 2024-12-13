@@ -1,11 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     const burgerToggle = document.getElementById("burger-toggle");
-    const sidebar = document.getElementById("sidebar");
+    const burgerMenu = document.querySelector(".burger-menu");
 
-    // Переключение состояния бургер-меню
+    // Добавляем обработчик события на кнопку
     burgerToggle.addEventListener("click", () => {
-        sidebar.classList.toggle("active");
+        burgerMenu.classList.toggle("active");
     });
+
+    // Закрываем меню, если оно активно и пользователь наводит курсор
+    burgerMenu.addEventListener("mouseleave", () => {
+        if (!burgerMenu.classList.contains("active")) {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.style.display = "none";
+        }
+    });
+});
+
 
     // Логика слайдера
     let currentSlide = 0;
