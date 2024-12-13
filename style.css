@@ -226,6 +226,22 @@ body {
     color: #333;
 }
 
+.burger-menu button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    color: #333;
+}
+
+.burger-menu button:hover {
+    color: #007BFF; /* Цвет при наведении */
+    transform: scale(1.1); /* Увеличение при наведении */
+    transition: all 0.3s ease;
+}
+
+
 #sidebar {
     position: fixed;
     top: 0;
