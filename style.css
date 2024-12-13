@@ -209,7 +209,6 @@ body {
     background-color: #45a049; /* Темнее при наведении */
 }
 
-
 /* Стили для бургер-меню */
 .burger-menu {
     position: relative;
@@ -225,7 +224,7 @@ body {
 
 #sidebar {
     position: absolute;
-    top: 40px; /* Расположение меню */
+    top: 40px;
     left: 0;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -235,8 +234,8 @@ body {
     z-index: 1000;
 }
 
-/* Показываем меню при наведении */
-.burger-menu:hover #sidebar {
+/* Показываем меню при наведении, если оно не активно */
+.burger-menu:not(.active):hover #sidebar {
     display: block;
 }
 
@@ -253,6 +252,12 @@ body {
     background-color: #f0f0f0;
     color: #007BFF;
 }
+
+/* Активное меню */
+.burger-menu.active #sidebar {
+    display: block; /* Открыто всегда, если класс active добавлен */
+}
+
 
 
 /* Пример стилей для слайдера */
