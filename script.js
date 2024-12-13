@@ -2,20 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const burgerToggle = document.getElementById("burger-toggle");
     const burgerMenu = document.querySelector(".burger-menu");
 
-    // Добавляем обработчик события на кнопку
+    // Добавляем обработчик события на кнопку бургер-меню
     burgerToggle.addEventListener("click", () => {
         burgerMenu.classList.toggle("active");
     });
-
-    // Закрываем меню, если оно активно и пользователь наводит курсор
-    burgerMenu.addEventListener("mouseleave", () => {
-        if (!burgerMenu.classList.contains("active")) {
-            const sidebar = document.getElementById("sidebar");
-            sidebar.style.display = "none";
-        }
-    });
-});
-
 
     // Логика слайдера
     let currentSlide = 0;
@@ -36,48 +26,27 @@ document.addEventListener("DOMContentLoaded", () => {
         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
         updateSlidePosition();
     };
-});
 
+    // Скрипт для параллакса
+    function parallaxEffect() {
+        const parallaxElements = document.querySelectorAll('.parallax'); // Находим все элементы с классом 'parallax'
 
+        parallaxElements.forEach((element) => {
+            const scrollPosition = window.scrollY; // Текущая позиция прокрутки страницы
+            const speed = parseFloat(element.getAttribute('data-speed')) || 0.5; // Скорость параллакса из data-атрибута
+            element.style.backgroundPosition = `center ${-scrollPosition * speed}px`; // Изменяем позицию фона
+        });
+    }
 
-// Скрипт для переключения слайдов
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slider-container img');
+    // Добавляем обработчик события на прокрутку
+    window.addEventListener('scroll', parallaxEffect);
+    parallaxEffect(); // Инициализация для начальной позиции
 
-function showSlide(index) {
-    const totalSlides = slides.length;
-    currentSlide = (index + totalSlides) % totalSlides;
-    document.querySelector('.slider-container').style.transform = `translateX(-${currentSlide * 100}%)`;
-}
+    // Логика для чат-бота
+    const chatToggle = document.getElementById("chat-toggle");
+    const chatPopup = document.getElementById("chat-popup");
 
-function nextSlide() {
-    showSlide(currentSlide + 1);
-}
-
-function prevSlide() {
-    showSlide(currentSlide - 1);
-}
-// Функция параллакса
-function parallaxEffect() {
-    const parallaxElements = document.querySelectorAll('.parallax'); // Находим все элементы с классом 'parallax'
-
-    parallaxElements.forEach((element) => {
-        const scrollPosition = window.scrollY; // Текущая позиция прокрутки страницы
-        const speed = parseFloat(element.getAttribute('data-speed')) || 0.5; // Скорость параллакса из data-атрибута
-
-        // Изменяем позицию фона
-        element.style.backgroundPosition = `center ${-scrollPosition * speed}px`;
+    chatToggle.addEventListener("click", () => {
+        chatPopup.style.display = chatPopup.style.display === "none" || chatPopup.style.display === "" ? "block" : "none";
     });
-}
-
-// Добавляем обработчик события на прокрутку
-window.addEventListener('scroll', parallaxEffect);
-
-// Инициализация для начальной позиции
-parallaxEffect();
-
-window.addEventListener('scroll', () => {
-    const parallax = document.querySelector('.parallax');
-    const scrollPosition = window.scrollY;
-    parallax.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
 });
